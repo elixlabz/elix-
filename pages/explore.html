@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explorer – Elix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="logo">Elix</a>
+    <div class="nav-links">
+      <a href="explore.html" style="color:#f0f0f0">Explorer</a>
+      <a href="login.html" class="btn-outline">Connexion</a>
+      <a href="register.html" class="btn-primary">S'inscrire</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>Découvrez les créatrices</h1>
+    <p>Abonnez-vous pour accéder à du contenu exclusif</p>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="🔍  Rechercher une créatrice..." id="searchInput" oninput="filterCreators()" />
+  </div>
+
+  <div class="creators-grid" id="creatorsGrid">
+
+    <a href="profile.html" class="creator-card">
+      <div class="creator-cover"></div>
+      <div class="creator-body">
+        <div class="creator-avatar"></div>
+        <div class="creator-name">Sophia</div>
+        <div class="creator-handle">@sophia_elix</div>
+        <div class="creator-bio">Contenu lifestyle & bien-être. Rejoins ma communauté exclusive ✨</div>
+        <div class="creator-footer">
+          <span class="creator-price">9,99€/mois</span>
+          <span class="creator-subs">1.2k abonnés</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="profile.html" class="creator-card">
+      <div class="creator-cover cover2"></div>
+      <div class="creator-body">
+        <div class="creator-avatar ca2"></div>
+        <div class="creator-name">Léa</div>
+        <div class="creator-handle">@lea_official</div>
+        <div class="creator-bio">Art, mode et exclusivité. Chaque semaine du nouveau contenu 🎨</div>
+        <div class="creator-footer">
+          <span class="creator-price">14,99€/mois</span>
+          <span class="creator-subs">890 abonnés</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="profile.html" class="creator-card">
+      <div class="creator-cover cover3"></div>
+      <div class="creator-body">
+        <div class="creator-avatar ca3"></div>
+        <div class="creator-name">Mia</div>
+        <div class="creator-handle">@mia_content</div>
+        <div class="creator-bio">Créatrice de contenu passionnée. Photos & vidéos uniques 📸</div>
+        <div class="creator-footer">
+          <span class="creator-price">7,99€/mois</span>
+          <span class="creator-subs">2.1k abonnés</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="profile.html" class="creator-card">
+      <div class="creator-cover cover4"></div>
+      <div class="creator-body">
+        <div class="creator-avatar ca4"></div>
+        <div class="creator-name">Inès</div>
+        <div class="creator-handle">@ines_elix</div>
+        <div class="creator-bio">Contenu premium quotidien. Rejoins les 500+ abonnés satisfaits 💜</div>
+        <div class="creator-footer">
+          <span class="creator-price">12,99€/mois</span>
+          <span class="creator-subs">540 abonnés</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <span class="logo">Elix</span>
+      <div class="footer-links">
+        <a href="#">CGU</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Elix. Accès strictement réservé aux majeurs (+18 ans).</p>
+    </div>
+  </footer>
+
+  <script>
+    function filterCreators() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.creator-card');
+      cards.forEach(card => {
+        const name = card.querySelector('.creator-name').textContent.toLowerCase();
+        const bio = card.querySelector('.creator-bio').textContent.toLowerCase();
+        card.style.display = (name.includes(query) || bio.includes(query)) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
